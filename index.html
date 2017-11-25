@@ -3,17 +3,16 @@
  <head>
   <meta charset="utf-8">
   <title>Поздравляшки</title>
-  <script>
-   var i=0;
+  <body>
+<img id="image" src="note.png" onClick="imgsrc();">
+<script language="javascript">
+var i=0;
 var image=document.getElementById("image");
-var imgs=new Array('img1.jpg','img2.jpg'); //Добавте свои картинки через запятую
+var imgs=new Array('note.png','note_30.png', 'note_30_.png'); // Добавте свои картинки через запятую
 function imgsrc(){
 i++;
 image.src=imgs[i];
 }
-  </script>
- </head> 
- <body>
-  <img id="image" src="" onClick="imgsrc();">
- </body>
+</script>
+</body>
 </html>
