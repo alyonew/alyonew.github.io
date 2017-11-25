@@ -1,14 +1,26 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
- <head>
-  <meta charset="utf-8">
-  <title>Уии</title>
-  <body>
-      <div class="header"> Котя думает, что  </div>
-      <img id="pic" src="http://medicall.ru/images/kot.jpg" />
-      <a href="#" onclick="slide()"> уии, ещё</a>
+<style>
+  img {
+  position: relative;
+    }
+  p {
+     position: absolute;
+     top:100px;   
+    margin-left: 27%;
+    
+    }
+</style>
+<body>
+
+   <div class="header"> Котя думает, что  </div>
+<div class="picture">
+  <img id="pic" src="http://medicall.ru/images/kot.jpg" />
+  <p id="txt"> Ты красавчик</p>
+</div>
+<a href="#" onclick="slide()"> уии, ещё</a>
   <script>
-   var index = 0;
+   var pindex = 0;
      var links = new Array (
               "http://medicall.ru/images/kot.jpg", 
               "https://veterinargid.ru/wp-content/uploads/2016/05/esli-kot-ne-mozhet-shodit-v-tualet-po-malenkomu.jpg", 
@@ -18,12 +30,30 @@
               "http://www.gandex.ru/upl/oboi/g70383.jpg",
               "https://i.ytimg.com/vi/vawEJFNarD4/maxresdefault.jpg"
     ); 
-  
+    
+     var tindex = 0;
+  var text = new Array (
+      "Ты настоящий бриллиант",
+      "Ты сегодня хорошо выглядишь",
+      "У тебя крутая прическа",
+      "Ты классный",
+      "У тебя красивая улыбка",
+      "Эта кофточка тебе очень идёт",
+      "Ты мой личный сорт Валерьянки",
+      "Ты - милашка",
+      "Ты красавчик",
+      "Ты вкусно пахнешь"
+      ); 
+      
     function slide() {
-      var element = document.getElementById("pic");
+      var pelement = document.getElementById("pic");
+      var telement = document.getElementById("txt");
       var rand = Math.floor(Math.random() * links.length);
-      index = rand;
-      element.src = links[index];
+      pindex = rand;
+      pelement.src = links[pindex];
+      var rand = Math.floor(Math.random() * text.length);
+      tindex = rand;
+      telement.textContent = text[tindex];
   }
   </script>
 </body>
@@ -32,7 +62,7 @@
     body {
   background-color: #E0FFFF;
    }
-    div {
+    .header {
   text-align: center;
   background-color: #7FFFD4;
   border-style: double;
@@ -52,6 +82,10 @@
   margin-left: 25%;
   margin-top: 2%;
   margin-bottom: 2%;
+
+    }
+    text {
+
     }
     a {text-align: center;
   background-color: #7FFFD4;
