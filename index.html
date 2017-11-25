@@ -27,6 +27,7 @@
   border-width: 5px;
   margin-left: 25%;
   margin-top: 2%;
+  margin-bottom: 2%;
     }
     a {text-align: center;
   background-color: #7FFFD4;
@@ -37,29 +38,28 @@
   width: 30%;
   font-size: 2vw;
   margin-left: 45%;
-  margin-top: 2%;
     }
    </style>
 <script language="javascript">
    var index = 0;
      var links = new Array (
             "http://medicall.ru/images/kot.jpg", 
-            "http://komotoz.ru/photo/images/photo_lisy/photo_lisy_02.jpg", 
-            "http://umm4.com/wp-content/uploads/2011/11/afrika-zhivotnye-savanny-5.jpg",
-            "https://www.sunhome.ru/i/wallpapers/8/oboi-rabochii-stol-zhivotnie.orig.jpg"
+            "https://veterinargid.ru/wp-content/uploads/2016/05/esli-kot-ne-mozhet-shodit-v-tualet-po-malenkomu.jpg", 
+            "http://xproggn.net/images/data/e/7/real.e7520fe1e7a8d599173fcd711eaa40e6.jpg",
+            "http://mybritishcat.ru/wp-content/uploads/2013/10/Koshka-melanholik.jpg"
+            "http://s03.radikal.ru/i176/0911/f2/3b99bfe14f3f.jpg",
+            "http://www.gandex.ru/upl/oboi/g70383.jpg",
+            "https://i.ytimg.com/vi/vawEJFNarD4/maxresdefault.jpg"
     ); 
   
-    function slide(v) {
+    function slide {
       var element = document.getElementById("pic");
-      index += 1 * v;
-            
-      if(index > links.length - 1) index = 0;
-      else if(index < 0) index = links.length - 1;
-      element.src = links[index];
+      var rand = Math.floor(Math.random() * arr.length);
+      element.src = links[rand];
   }
 </script>
    <div class="header"> Котя думает, что  </div>
    <img id="pic" src="http://medicall.ru/images/kot.jpg"/>
-   <a href="#" onclick="slide(1)">уии, ещё</a>
+   <a href="#" onclick="slide">уии, ещё</a>
 </body>
 </html>
