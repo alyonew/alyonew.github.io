@@ -6,13 +6,21 @@
   <body>
 <img id="image" src="https://img1.goodfon.ru/wallpaper/big/1/ca/foto-makro-kartinka-zelenye.jpg" onClick="imgsrc();">
 <script language="javascript">
-var i=0;
-var image=document.getElementById("image");
-var imgs=new Array('img1.jpg','img2.jpg'); // Добавте свои картинки через запятую
-function imgsrc(){
-i++;
-image.src=imgs[i];
+function l_image (a) {
+    document.example_img.src=a
 }
 </script>
+   <tr align="center" valign="center">
+ <td width="350" height="200">
+  <a href="javascript:l_image ('image/img_1.png')">Ссылка на изображение №1</a><br>
+  <a href="javascript:l_image ('image/img_2.png')">Ссылка на изображение №2</a><br>
+  <a href="javascript:l_image ('image/img_3.png')">Ссылка на изображение №3</a><br>
+  <a href="javascript:l_image ('image/img_4.png')">Ссылка на изображение №4</a><br>
+ </td>
+ <td width="350" height="200">
+  <img src="image/img_1.png" name="example_img"
+  alt="Картинки для демонстрации работы скрипта смены изображений">
+ </td>
+</tr>
 </body>
 </html>
