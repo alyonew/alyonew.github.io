@@ -4,7 +4,31 @@
   <meta charset="utf-8">
   <title>Уии</title>
   <body>
-   <style>
+      <div class="header"> Котя думает, что  </div>
+      <img id="pic" src="http://medicall.ru/images/kot.jpg" />
+      <a href="#" onclick="slide()"> уии, ещё</a>
+  <script>
+   var index = 0;
+     var links = new Array (
+              "http://medicall.ru/images/kot.jpg", 
+              "https://veterinargid.ru/wp-content/uploads/2016/05/esli-kot-ne-mozhet-shodit-v-tualet-po-malenkomu.jpg", 
+              "http://xproggn.net/images/data/e/7/real.e7520fe1e7a8d599173fcd711eaa40e6.jpg",
+              "http://mybritishcat.ru/wp-content/uploads/2013/10/Koshka-melanholik.jpg",
+              "http://s03.radikal.ru/i176/0911/f2/3b99bfe14f3f.jpg",
+              "http://www.gandex.ru/upl/oboi/g70383.jpg",
+              "https://i.ytimg.com/vi/vawEJFNarD4/maxresdefault.jpg"
+    ); 
+  
+    function slide() {
+      var element = document.getElementById("pic");
+      var rand = Math.floor(Math.random() * links.length);
+      index = rand;
+      element.src = links[index];
+  }
+  </script>
+</body>
+
+<style>
     body {
   background-color: #E0FFFF;
    }
@@ -39,26 +63,4 @@
   font-size: 2vw;
   margin-left: 45%;
     }
-   </style>
-<script language="javascript">
-        var links = new Array (
-            "http://medicall.ru/images/kot.jpg", 
-            "https://veterinargid.ru/wp-content/uploads/2016/05/esli-kot-ne-mozhet-shodit-v-tualet-po-malenkomu.jpg", 
-            "http://xproggn.net/images/data/e/7/real.e7520fe1e7a8d599173fcd711eaa40e6.jpg",
-            "http://mybritishcat.ru/wp-content/uploads/2013/10/Koshka-melanholik.jpg",
-            "http://s03.radikal.ru/i176/0911/f2/3b99bfe14f3f.jpg",
-            "http://www.gandex.ru/upl/oboi/g70383.jpg",
-            "https://i.ytimg.com/vi/vawEJFNarD4/maxresdefault.jpg"
-    ); 
-  
-    function slide() {
-      var element = document.getElementById("pic");
-      var rand = Math.floor(Math.random() * links.length);
-      element.src = links[rand];
-  }
-</script>
-   <div class="header"> Котя думает, что  </div>
-   <img id="pic" src="https://veterinargid.ru/wp-content/uploads/2016/05/esli-kot-ne-mozhet-shodit-v-tualet-po-malenkomu.jpg"/>
-   <a href="#" onclick=" slide() "> уии, ещё </a>
-</body>
 </html>
