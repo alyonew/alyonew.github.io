@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> СтатусПолучи </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no"/> <!-- нельзя приближать на мобильных устройствах-->
+	<meta charset="UTF-8">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	
+</head>
+<body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/quotes.js"></script>
+<script>
+	$(document).ready(function(){
+		var windowHeight = window.innerHeight;
+		document.getElementById("container").style.minHeight = windowHeight + "px";
+	})
+</script>
+<div class=" valign-wrapper" id="container">
+	<div class="container center-align">
+		<div class="row">
+			<div class="col s12 m8 offset-m2 hide" id="text_up">
+				<p class="flow-text center-align">Статус для сегодняшнего тебя</p>
+			</div>
+			<div class="col s12 m8 offset-m2 valign-wrapper" id="preloader_img">
+				<div class="center-align cont" width="64px" height="64px">
+					<div class="preloader-wrapper big active">
+						<div class="spinner-layer spinner-blue">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+
+						<div class="spinner-layer spinner-red">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+
+						<div class="spinner-layer spinner-yellow">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+
+						<div class="spinner-layer spinner-green">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m8 offset-m2 hide" id="img_block">
+				<canvas class="materialboxed" id="img"></canvas>
+				<div class="center-align">
+					<a class="waves-effect waves-light light-blue darken-4 btn" onclick="refresh()">Другое</a>
+					<!--<button class="hide btn-flat disabled" id="p" onclick="refresh()"></button>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="page-footer grey lighten-4" id="footer">
+	<div class="footer-copyright grey lighten-4">
+		<div class="container">
+			<div class="row">
+				<h6 class="center-align condensed light black-text">© KiR 2017</h6>
+				<div class="center-align">
+					<a class="center-align hide-on-small-only" target="_blank" href="https://vk.com/lli_9">
+					<img src="images/vk.svg" width="40px" alt="Вконтакте" class="vk-img circle responsive-img">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
