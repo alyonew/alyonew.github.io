@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
-<style>
-  img {
-  position: relative;
-    }
-  p {
-     position: absolute;
-     top:100px;   
-     margin-left: 27%;
-    font-size: 2.5vw;
-    color: #40E0D0;
-    text-shadow: black 0 0 3px;
-    }
-</style>
-<body>
-
-   <div class="header"> Коти думают, что  </div>
-<div class="picture">
-  <img id="pic" src="http://medicall.ru/images/kot.jpg" />
-  <p id="txt"> Ты красавчик</p>
-</div>
-<a href="#" onclick="slide()"> уии, ещё</a>
-  <script>
-   var pindex = 0;
+  <meta charset='utf-8'>
+  <head>
+    <title>уии</title>
+  </head>
+  <style>
+    canvas {
+    border: 2px outset #ccc;
+     margin-left: 20%;
+}
+  </style>
+  <body>
+    <div class="header"> Котики думают, что  </div>
+    <canvas height='768' width='1024' id='pict'>cats</canvas>
+    <a href="#" onclick="slide()"> уии, ещё</a>
+    <script>
+    var pindex = 0;
      var links = new Array (
               "http://medicall.ru/images/kot.jpg", 
               "https://veterinargid.ru/wp-content/uploads/2016/05/esli-kot-ne-mozhet-shodit-v-tualet-po-malenkomu.jpg", 
@@ -64,56 +57,70 @@
       "Без тебя мне грустно"
       ); 
       
+      var pict = document.getElementById("pict"),
+        ctx       = pict.getContext('2d'), 
+        pic       = new Image();     
+        var rand = Math.floor(Math.random() * links.length);
+        pindex = rand;
+        var rand = Math.floor(Math.random() * text.length);
+        tindex = rand;
+      pic.src    = links[pindex];
+      pic.onload = function() {    
+        ctx.drawImage(pic, 0, 0);  
+    ctx.strokeStyle = "#F00";
+    ctx.textAlign="center"; 
+    ctx.font = 'bold 80px sans-serif';
+    ctx.shadowColor = "black";
+    ctx.shadowOffsetX = 5;
+    ctx.shadowOffsetY = 5;
+    ctx.shadowBlur = 5;
+    ctx.strokeText(text[tindex], 510, 300);
+      }
     function slide() {
-      var pelement = document.getElementById("pic");
-      var telement = document.getElementById("txt");
-      var rand = Math.floor(Math.random() * links.length);
-      pindex = rand;
-      pelement.src = links[pindex];
-      var rand = Math.floor(Math.random() * text.length);
-      tindex = rand;
-      telement.textContent = text[tindex];
+       var pict = document.getElementById("pict"),
+        ctx       = pict.getContext('2d'), 
+        pic       = new Image();     
+        var rand = Math.floor(Math.random() * links.length);
+        pindex = rand;
+        var rand = Math.floor(Math.random() * text.length);
+        tindex = rand;
+      pic.src    = links[pindex];
+      pic.onload = function() {    
+        ctx.drawImage(pic, 0, 0);  
+    ctx.strokeStyle = "#F00";
+    ctx.textAlign="center"; 
+    ctx.font = 'bold 80px sans-serif';
+    ctx.shadowColor = "black";
+    ctx.shadowOffsetX = 5;
+    ctx.shadowOffsetY = 5;
+    ctx.shadowBlur = 5;
+    ctx.strokeText(text[tindex], 510, 300);
+     
   }
-  </script>
-</body>
-
-<style>
+     
+      }
+    </script>
+  </body>
+  <style>
     body {
   background-color: #E0FFFF;
    }
     .header {
   text-align: center;
-  background-color: #7FFFD4;
-  border-style: double;
-  border-color: #40E0D0;
-  border-width: 5px;
-  height: 20%;
+  height: 10%;
   width: auto;
-  font-size: 3vw;
+  font-size: 1.5vw;
   min-width: 90%;
 }
-    img {
-  height: 50%;
-  width: 50%;
-  border-style: double;
-  border-color: #40E0D0;
-  border-width: 5px;
-  margin-left: 25%;
-  margin-top: 2%;
-  margin-bottom: 2%;
 
-    }
-    text {
-
-    }
     a {text-align: center;
   background-color: #7FFFD4;
-  border-style: double;
+  border-style: outset;
   border-color: #40E0D0;
-  border-width: 5px;
+  border-width: 2px;
   height: 30%;
   width: 30%;
-  font-size: 2vw;
+  font-size: 1vw;
   margin-left: 45%;
     }
 </html>
