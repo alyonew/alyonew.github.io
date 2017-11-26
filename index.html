@@ -23,6 +23,7 @@
             var testLine = line + words[n] + " ";
             var testWidth = context.measureText(testLine).width;
             if (testWidth > maxWidth) {
+              context.fillText(line, marginLeft, marginTop);
                 context.strokeText(line, marginLeft, marginTop);
                 line = words[n] + " ";
                 marginTop += lineHeight;
@@ -31,6 +32,7 @@
                 line = testLine;
             }
         }
+ context.fillText(line, marginLeft, marginTop);
         context.strokeText(line, marginLeft, marginTop);
     }
     
@@ -87,11 +89,12 @@
       pic.onload = function() {    
         ctx.drawImage(pic, 0, 0, 800, 600);  
     ctx.strokeStyle = "#F4A460";
+    ctx.fillStyle = "#A52A2A";
     ctx.shadowColor = "black";
-    ctx.shadowOffsetX = 3;
-    ctx.shadowOffsetY = 3;
-    ctx.shadowBlur = 4;
-    ctx.font = '100px Courier';
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 0;
+    ctx.font = 'italic 100px Courier';
       wrapText(ctx, text[tindex], 100, 200, 600, 100);
       }
     function slide() {
@@ -106,11 +109,12 @@
       pic.onload = function() {    
         ctx.drawImage(pic, 0, 0, 800, 600);  
     ctx.strokeStyle = "#F4A460";
+    ctx.fillStyle = "#A52A2A";
     ctx.shadowColor = "black";
-    ctx.shadowOffsetX = 5;
-    ctx.shadowOffsetY = 5;
-    ctx.shadowBlur = 5;
-    ctx.font = '100px Courier';
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 0;
+    ctx.font = 'italic 100px Courier';
       wrapText(ctx, text[tindex], 100, 200, 600, 100);
   }
      
@@ -132,6 +136,7 @@
   width: 30%;
   font-size: 2vw;
   margin-left: 45%;
+    font-style: italic;
     }
         .header {
   text-align: center;
