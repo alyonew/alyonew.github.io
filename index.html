@@ -7,12 +7,12 @@
   <style>
     canvas {
     border: 2px outset #ccc;
-     margin-left: 20%;
+    padding: 0% 25%;
 }
   </style>
   <body>
-    <div class="header"> Котики думают, что  </div>
-    <canvas height='768' width='1024' id='pict'>cats</canvas>
+     <div class="header"> Котики думают, что  </div>
+    <canvas height='600' width='800' id='pict'>cats</canvas>
     <a href="#" onclick="slide()"> уии, ещё</a>
     <script>
     var pindex = 0;
@@ -66,15 +66,16 @@
         tindex = rand;
       pic.src    = links[pindex];
       pic.onload = function() {    
-        ctx.drawImage(pic, 0, 0);  
+        ctx.drawImage(pic, 0, 0, 800, 600);  
     ctx.strokeStyle = "#F00";
     ctx.textAlign="center"; 
+    ctx.textBaseline = "middle";
     ctx.font = 'bold 80px sans-serif';
     ctx.shadowColor = "black";
     ctx.shadowOffsetX = 5;
     ctx.shadowOffsetY = 5;
     ctx.shadowBlur = 5;
-    ctx.strokeText(text[tindex], 510, 300);
+    ctx.strokeText(text[tindex], 420, 300);
       }
     function slide() {
        var pict = document.getElementById("pict"),
@@ -86,7 +87,7 @@
         tindex = rand;
       pic.src    = links[pindex];
       pic.onload = function() {    
-        ctx.drawImage(pic, 0, 0);  
+        ctx.drawImage(pic, 0, 0, 800, 600);  
     ctx.strokeStyle = "#F00";
     ctx.textAlign="center"; 
     ctx.font = 'bold 80px sans-serif';
@@ -94,8 +95,7 @@
     ctx.shadowOffsetX = 5;
     ctx.shadowOffsetY = 5;
     ctx.shadowBlur = 5;
-    ctx.strokeText(text[tindex], 510, 300);
-     
+    ctx.strokeText(text[tindex], 420, 300);
   }
      
       }
@@ -105,14 +105,6 @@
     body {
   background-color: #E0FFFF;
    }
-    .header {
-  text-align: center;
-  height: 10%;
-  width: auto;
-  font-size: 1.5vw;
-  min-width: 90%;
-}
-
     a {text-align: center;
   background-color: #7FFFD4;
   border-style: outset;
@@ -120,7 +112,14 @@
   border-width: 2px;
   height: 30%;
   width: 30%;
-  font-size: 1vw;
-  margin-left: 45%;
+  font-size: 2vw;
+  margin-left: 50%;
     }
+        .header {
+  text-align: center;
+  height: 10%;
+  width: auto;
+  font-size: 2.5vw;
+  min-width: 90%;
+}
 </html>
