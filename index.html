@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
   <meta charset='utf-8'>
- 
+  <head>
+    <title>уии</title>
+  </head>
   <style>
     canvas {
     padding: 0% 25%;
 }
   </style>
   <body>
-     <div class="header"> </div>
-    <canvas height='600' width='800' id='pict'>cats</canvas>
-    <a href="#" onclick="slide()"> ещё</a>
-       <p> Цитата с картинки:</p>
+     <div class="header"> Котики думают, что  </div>
+    <canvas height='600' width='800' id='pict'>cats
+
+        </canvas>
+    <a href="#" onclick="slide()"> уии, ещё</a>
+    <p> Цитата с картинки:</p>
         <p id='quote'> </p>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
     function wrapText(context, text, marginLeft, marginTop, maxWidth, lineHeight)
     {
@@ -36,109 +41,27 @@
  context.fillText(line, marginLeft, marginTop);
         context.strokeText(line, marginLeft, marginTop);
     }
-    
-    var pindex = 0;
-     var links = new Array (
-              "http://medicall.ru/images/kot.jpg", 
-              "https://veterinargid.ru/wp-content/uploads/2016/05/esli-kot-ne-mozhet-shodit-v-tualet-po-malenkomu.jpg", 
-              "https://kotofey-club.ru/wp-content/uploads/2015/02/1424983891_fonstola.ru-78966.jpg",
-              "http://mybritishcat.ru/wp-content/uploads/2013/10/Koshka-melanholik.jpg",
-              "http://s03.radikal.ru/i176/0911/f2/3b99bfe14f3f.jpg",
-              "http://www.gandex.ru/upl/oboi/g70383.jpg",
-              "http://bagiraclub.ru/images/bagiraclub/2017/02/miniatjura.jpg",
-              "https://kotvokoshke.by/sites/default/files/shelter_cats_mr/b161799w.jpg", 
-              "https://petcare.ua/userfiles/%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%BE%D1%88%D0%BA%D0%B0.jpg", 
-              "https://veterinargid.ru/wp-content/uploads/2016/04/pochemu-koshki-topchut-nas-lapkami.jpg",
-              "http://ru.catswallpapers.net/wallpapers/lovely-abyssinian-cat-photo.jpg",
-              "http://www.tinydog.ru/wp-content/uploads/2016/09/Pereizbytok-vnimanija-koshki.jpg",
-              "https://veterinargid.ru/wp-content/uploads/2016/04/u-kota-ponos-s-krovyu.jpg",
-              "http://i.wallpic.net/9/143b/krasivaya-koshka-s-umnym-vzlyadom_1024x768.jpg"
-    ); 
-    
-      
-      var pict = document.getElementById("pict"),
-        ctx       = pict.getContext('2d'), 
-        pic       = new Image();     
-        var rand = Math.floor(Math.random() * links.length);
-        pindex = rand;
-      pic.src    = links[pindex];
-      pic.onload = function() {    
-        ctx.drawImage(pic, 0, 0, 800, 600);  
-    ctx.strokeStyle = "#F4A460";
-    ctx.fillStyle = "#A52A2A";
-    ctx.shadowColor = "black";
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 2;
-    ctx.shadowBlur = 0;
-    ctx.font = 'italic 40px Courier';
-      }
-      function parseQuote(response) {
- $("#quote").text(response.quoteText);
- wrapText(ctx, response.quoteText, 100, 70, 600, 40);
-};
-var tag = document.createElement("script");
-tag.src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";//wrapText(ctx, tag, 100, 70, 600, 60);
-$('#quote').html(tag);
-     
-    function slide() {
-            var pict = document.getElementById("pict"),
-        ctx       = pict.getContext('2d'), 
-        pic       = new Image();     
-        var rand = Math.floor(Math.random() * links.length);
-        pindex = rand;
-      pic.src    = links[pindex];
-      pic.onload = function() {    
-        ctx.drawImage(pic, 0, 0, 800, 600);  
-    ctx.strokeStyle = "#F4A460";
-    ctx.fillStyle = "#A52A2A";
-    ctx.shadowColor = "black";
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 2;
-    ctx.shadowBlur = 0;
-    ctx.font = 'italic 40px Courier';
-      }
-      function parseQuote(response) {
- $("#quote").text(response.quoteText);
- wrapText(ctx, response.quoteText, 100, 70, 600, 40);
-};
-var tag = document.createElement("script");
-tag.src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";//wrapText(ctx, tag, 100, 70, 600, 60);
-$('#quote').html(tag);
-     
-      }
-    </script>
-  <style>
 
+     var pict = document.getElementById("pict"),
+        ctx       = pict.getContext('2d'), 
+        pic       = new Image(); 
+         pic.src    =  "http://i.wallpic.net/9/143b/krasivaya-koshka-s-umnym-vzlyadom_1024x768.jpg";
+       pic.onload = function() {    
+       ctx.drawImage(pic, 0, 0, 800, 600); 
+}
+      function parseQuote(response) {
+ $("#quote").text(response.quoteText);
+ wrapText(ctx, response.quoteText, 100, 70, 600, 60);
+};
+var tag = document.createElement("script");
+tag.src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";//wrapText(ctx, tag, 100, 70, 600, 60);
+$('#quote').html(tag);
+
+    </script>
+  </body>
+  <style>
     body {
   background-color: #F5F5DC;
    }
-    a {
-  text-align: center;
-  color: #A52A2A;
-  background-color: #F5F5DC;
-  border-style: outset;
-  border-color: #FFDEAD;
-  border-width: 2px;
-  height: 30%;
-  width: 30%;
-  font-size: 2vw;
-  margin-left: 45%;
-    font-style: italic;
-    }
-        .header {
-  text-align: center;
-  font-style: italic;
-  color: #A52A2A;
-  height: 10%;
-  width: auto;
-  font-size: 2.5vw;
-  min-width: 90%;
-}
-p{
-  text-align: center;
- font-style: italic;
-  color: #A52A2A; 
-}
-  </style>
-  </body>
+
 </html>
