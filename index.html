@@ -61,6 +61,13 @@
         var rand = Math.floor(Math.random() * links.length);
         pindex = rand;
 
+          $.ajax({
+      url: "https://api.forismatic.com/api/1.0/",
+      data: {
+        method: "getQuote",
+        lang: "ru"
+      }
+    })
       pic.src    = links[pindex];
       pic.onload = function() {    
         ctx.drawImage(pic, 0, 0, 800, 600);  
@@ -71,14 +78,9 @@
     ctx.shadowOffsetY = 2;
     ctx.shadowBlur = 0;
     ctx.font = 'italic 60px Courier';
-    $.ajax({
-      url: "https://api.forismatic.com/api/1.0/",
-      data: {
-        method: "getQuote",
-        lang: "ru"
-      }
+
      wrapText(ctx, data, 100, 70, 600, 60);
-    })
+
       }
     function slide() {
        var pict = document.getElementById("pict"),
