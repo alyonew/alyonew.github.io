@@ -3,28 +3,13 @@
   <meta charset='utf-8'>
 
   <body>
-
-
-<p>Forismatic does not offer their api over HTTPS. See <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content">Mixed Content</a>.
-</p>
-<p>
-  <a href="https://codepen.io/dting/pen/PqrZgb/" target="_top">HTTP version of this codepen</a>
-</p>
-<button id='quoteGETJSON'>Quote getJSON</button>
 <button id='quoteAJAX'>Quote ajax</button>
 <pre id="response"></pre>
 <hr>
 <div id="log"></div>
-
+    
   </body>
       <script>
- // https://api.jquery.com/jquery.getjson/#jsonp
-$('#quoteGETJSON').click(function() {
-  $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?")
-    .done(update)
-    .fail(handleErr);
-});
-
 $('#quoteAJAX').click(function() {
   $.ajax({
       url: "https://api.forismatic.com/api/1.0/",
@@ -49,9 +34,5 @@ function handleErr(jqxhr, textStatus, err) {
   console.log("Request Failed: " + textStatus + ", " + err);
 }
     </script>
-
-
-
-
 
 </html>
