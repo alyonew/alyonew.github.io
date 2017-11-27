@@ -13,6 +13,9 @@
      <div class="header"> Котики думают, что  </div>
     <canvas height='600' width='800' id='pict'>cats</canvas>
     <a href="#" onclick="slide()"> уии, ещё</a>
+       <p> Цитата с картинки:</p>
+        <p id='quote'> </p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
     function wrapText(context, text, marginLeft, marginTop, maxWidth, lineHeight)
     {
@@ -60,7 +63,6 @@
         pic       = new Image();     
         var rand = Math.floor(Math.random() * links.length);
         pindex = rand;
-
       pic.src    = links[pindex];
       pic.onload = function() {    
         ctx.drawImage(pic, 0, 0, 800, 600);  
@@ -70,12 +72,11 @@
     ctx.shadowOffsetX = 2;
     ctx.shadowOffsetY = 2;
     ctx.shadowBlur = 0;
-    ctx.font = 'italic 60px Courier';
+    ctx.font = 'italic 40px Courier';
       }
-
       function parseQuote(response) {
  $("#quote").text(response.quoteText);
- wrapText(ctx, response.quoteText, 100, 70, 600, 60);
+ wrapText(ctx, response.quoteText, 100, 70, 600, 40);
 };
 var tag = document.createElement("script");
 tag.src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";//wrapText(ctx, tag, 100, 70, 600, 60);
@@ -87,7 +88,6 @@ $('#quote').html(tag);
         pic       = new Image();     
         var rand = Math.floor(Math.random() * links.length);
         pindex = rand;
-
       pic.src    = links[pindex];
       pic.onload = function() {    
         ctx.drawImage(pic, 0, 0, 800, 600);  
@@ -97,12 +97,11 @@ $('#quote').html(tag);
     ctx.shadowOffsetX = 2;
     ctx.shadowOffsetY = 2;
     ctx.shadowBlur = 0;
-    ctx.font = 'italic 60px Courier';
+    ctx.font = 'italic 40px Courier';
       }
-
       function parseQuote(response) {
  $("#quote").text(response.quoteText);
- wrapText(ctx, response.quoteText, 100, 70, 600, 60);
+ wrapText(ctx, response.quoteText, 100, 70, 600, 40);
 };
 var tag = document.createElement("script");
 tag.src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";//wrapText(ctx, tag, 100, 70, 600, 60);
