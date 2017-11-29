@@ -64,7 +64,7 @@ $('#quote').html(tag);
       var pict = document.getElementById("pict"),
         ctx       = pict.getContext('2d'), 
         pic       = new Image();     
-      pic.src    ="https://picsum.photos/1024/768?image="+ Math.floor(Math.random() * 40));;
+      pic.src    ="https://picsum.photos/1024/768?image="+ Math.floor(Math.random() * (40));
          pic.onload = function() {    
         ctx.drawImage(pic, 0, 0, 800, 600);  
     ctx.strokeStyle = "#F4A460";
