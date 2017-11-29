@@ -50,41 +50,19 @@
     ctx.shadowOffsetY = 2;
     ctx.shadowBlur = 0;
     ctx.font = 'italic 40px Courier';
+      }
+
+              
            function parseQuote(response) {
  $("#quote").text(response.quoteText);
  wrapText(ctx, response.quoteText, 100, 70, 600, 40);
 };
 var tag = document.createElement("script");
 tag.src="https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";
-$('#quote').html(tag);
-      }
-
-      
+$('#quote').html(tag); 
      
     function slide() {
-            var pict = document.getElementById("pict"),
-        ctx       = pict.getContext('2d'), 
-        pic       = new Image();     
-        var rand = Math.floor(Math.random() * links.length);
-        pindex = rand;
-      pic.src    = links[pindex];
-      pic.onload = function() {    
-        ctx.drawImage(pic, 0, 0, 800, 600);  
-    ctx.strokeStyle = "#F4A460";
-    ctx.fillStyle = "#A52A2A";
-    ctx.shadowColor = "black";
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 2;
-    ctx.shadowBlur = 0;
-    ctx.font = 'italic 40px Courier';
-      }
-      function parseQuote(response) {
- $("#quote").text(response.quoteText);
- wrapText(ctx, response.quoteText, 100, 70, 600, 40);
-};
-var tag = document.createElement("script");
-tag.src="https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";
-$('#quote').html(tag);
+
      
       }
     </script>
