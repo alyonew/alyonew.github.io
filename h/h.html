@@ -50,6 +50,9 @@
     ctx.shadowOffsetY = 2;
     ctx.shadowBlur = 0;
     ctx.font = 'italic 40px Courier';
+           var tag = document.createElement("script");
+tag.src="https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";
+$('#quote').html(tag); 
       }
 
               
@@ -57,9 +60,7 @@
  $("#quote").text(response.quoteText);
  wrapText(ctx, response.quoteText, 100, 70, 600, 40);
 };
-var tag = document.createElement("script");
-tag.src="https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";
-$('#quote').html(tag); 
+
      
     function slide() {
 
