@@ -40,7 +40,7 @@
       var pict = document.getElementById("pict"),
         ctx       = pict.getContext('2d'), 
         pic       = new Image();     
-
+      pic.src    ="https://picsum.photos/1024/768/?random";
          pic.onload = function() {    
         ctx.drawImage(pic, 0, 0, 800, 600);  
     ctx.strokeStyle = "#F4A460";
@@ -58,7 +58,7 @@ var tag = document.createElement("script");
 tag.src="https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=ru&jsonp=parseQuote";
 $('#quote').html(tag);
       }
-      pic.src    ="https://picsum.photos/200/300/?random";
+
       
      
     function slide() {
