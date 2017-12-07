@@ -50,6 +50,7 @@
             ctx       = pict.getContext('2d'), 
             pic       = new Image();     
             pic.src    ="https://picsum.photos/1024/768?image="+ Math.floor(Math.random() * (70));
+            pic.setAttribute('crossOrigin', 'anonymous');
             pic.onload = function() { 
             ctx.drawImage(pic, 0, 0, 800, 600);  
             ctx.strokeStyle = "#F4A460";
@@ -69,31 +70,38 @@
        getrandomQuote();
 
      });
-          
+     
+      
+       
+        $("#download").click(function () {
+          var canvasData = canvasElement.toDataURL("pict");
+        $.ajax({
+        url:'save.php', 
+        type:'POST', 
+        data:{
+            data:canvasData
+        }
+         }).done(function(msg){ 
+                     var link = document.getElementById("Downloadlink");
+                     link.setAttribute("href", "http://https://b93100w5.beget.tech/" + msg);
+                     link.innerHTML = "http://b93100w5.beget.tech/" + msg;
+                });
+
+      });
+   
      $("#new").click(function(){
       var link = document.getElementById("Downloadlink");
-    link.removeAttribute("href");
+    link.setAttribute("href", "");
     link.innerHTML = "Uploading... (~0.5 min)";
 
         getrandomQuote();
       });
-       $("#download").click(function () {
-                
-  $.ajax({
-  type: "POST",
-  url: "script.php",
-  data: { 
-     imgBase64: dataURL
-  }
-}).complete(function(o) {
-  var link = document.getElementById("Downloadlink");
-  link.setAttribute("href", "http://b93100w5.beget.tech/" + o.responseText);
-  link.innerHTML = "http://b93100w5.beget.tech/" + o.responseText;
-});
-            });
+      
 
     });
+
     </script>
+         
   <style>
 
     body {
