@@ -1,9 +1,9 @@
 <template>
   <div class="drag">
-    <input v-model="input" class="name"></input>
-    <button id="add" @click="addNode">Add new task</button>
       <div class="to-do">
         <div class="header">TO-DO</div>
+        <input v-model="input1" class="name"></input>
+        <button id="add1" @click="addNode1">Add card</button>
         <draggable class="drag-area" :list="notes1" :options="{animation:200, group:'dragGroup'}" >
           <div class="card" v-for="(task, index) in notes1">
               {{ task.name }}
@@ -12,6 +12,8 @@
       </div>
       <div class="in-progress">
         <div class="header">IN PROGRESS</div>
+        <input v-model="input2" class="name"></input>
+        <button id="add2" @click="addNode2">Add card</button>
         <draggable class="drag-area" :list="notes2" :options="{animation:200, group:'dragGroup'}">
           <div class="card" v-for="(task, index) in notes2">
               {{ task.name }}
@@ -20,6 +22,8 @@
       </div>
       <div class="review-required">
         <div class="header">REVIEW REQUIRED</div>
+        <input v-model="input3" class="name"></input>
+        <button id="add3" @click="addNode3">Add card</button>
         <draggable class="drag-area" :list="notes3" :options="{animation:200, group:'dragGroup'}" >
           <div class="card" v-for="(task, index) in notes3">
               {{ task.name }}
@@ -28,6 +32,8 @@
       </div>
       <div class="done">
         <div class="header">DONE</div>
+        <input v-model="input4" class="name"></input>
+        <button id="add4" @click="addNode4">Add card</button>
         <draggable class="drag-area" :list="notes4" :options="{animation:200, group:'dragGroup'}" >
           <div class="card" v-for="(task, index) in notes4">
               {{ task.name }}
@@ -55,11 +61,29 @@
     },
 
     methods: {
-      addNode: function() {
+      addNode1: function() {
         this.notes1.push({
-          name: this.input
+          name: this.input1
         });
-        this.input = ''
+        this.input1 = ''
+      },
+      addNode2: function() {
+        this.notes2.push({
+          name: this.input2
+        });
+        this.input2 = ''
+      },
+      addNode3: function() {
+        this.notes3.push({
+          name: this.input3
+        });
+        this.input3 = ''
+      },
+      addNode4: function() {
+        this.notes4.push({
+          name: this.input4
+        });
+        this.input4 = ''
       },
 
     }
@@ -74,6 +98,7 @@
   text-align: center;
 }
 button {
+  margin-top: 5px;
   width: 10vw;
   height: 24px;
   border: none;
@@ -82,11 +107,6 @@ button {
   font-size: 10px;
 }
 input{
-  margin-left: 20vw;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  width: 50vw;
-  height: 20px;
   border: 1px solid #CCC;
 }
 
@@ -105,7 +125,7 @@ input{
 .drag-area
 {
   float: left;
-  height: 100vh;
+  height: 80vh;
   width: 24vw;
 }
 
